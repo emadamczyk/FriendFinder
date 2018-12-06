@@ -12,7 +12,11 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
+// Basic route that sends the user first to the AJAX Page
+app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "/FriendFinder/app/public/home.html"));
+  });
+  
 
 // Starts the server to begin listening
 // =============================================================
